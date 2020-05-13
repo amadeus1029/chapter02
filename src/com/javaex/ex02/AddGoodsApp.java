@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class AddGoodsApp {
     public static void main(String[] args) {
+        //상품을 무한으로 입력할 수 있는 코드를 만들어보자
         Scanner addGoods = new Scanner(System.in);
         Goods[] goodsArray = new Goods[1]; // 입력받을 배열 생성
         boolean addMore = true; //반복문 탈출요건 정의
