@@ -12,10 +12,11 @@ public class AddGoodsApp2 {
         for(int i=0;programWork;) {
             System.out.println("메뉴를 선택해주세요");
             System.out.println("1.추가하기\t2.리스트보기\t3.종료하기");
+            System.out.print("메뉴번호>> ");
             int menu = addGoods.nextInt();
             switch (menu) {
                 case 1 :
-                    if(i!=0) {
+                    if(i!=0) { //처음 상품 추가 이외에는 추가하기 전에 배열의 길이부터 늘려야함
                         Goods[] tempGoodsArray = new Goods[goodsArray.length+1]; //지금까지 입력한 배열보다 하나 더 긴 배열 생성
                         for(int j=0;j<goodsArray.length;j++) { //새로 생성한 배열에 기존 배열 복사
                             tempGoodsArray[j] = goodsArray[j];
@@ -30,9 +31,13 @@ public class AddGoodsApp2 {
                     i++;
                     break;
                 case 2 :
-                    System.out.println("등록하신 상품의 목록은 총 "+goodsArray.length+"개이며");
-                    for(int j=0;j<goodsArray.length;j++) {
-                        System.out.println((j+1)+". "+"상품명: "+goodsArray[j].name+"\t가격: "+goodsArray[j].price);
+                    if(goodsArray[0] == null) {
+                        System.out.println("등록하신 상품이 존재하지 않습니다");
+                    } else {
+                        System.out.println("등록하신 상품의 목록은 총 "+goodsArray.length+"개이며");
+                        for(int j=0;j<goodsArray.length;j++) {
+                            System.out.println((j+1)+". "+"상품명: "+goodsArray[j].name+"\t가격: "+goodsArray[j].price);
+                        }
                     }
                     break;
                 case 3 :
