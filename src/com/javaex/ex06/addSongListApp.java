@@ -43,15 +43,32 @@ public class addSongListApp {
                         System.out.print("작곡가: ");
                         composer = addSongs.next();
                         songsArray[i].setComposer(composer);
-                        
-                        System.out.print("년도: ");
-                        year = addSongs.nextInt();
-                        songsArray[i].setYear(year);
 
-                        System.out.print("트랙번호: ");
-                        track = addSongs.nextInt();
-                        songsArray[i].setTrack(track);
+                        do {
+                            try {
+                                System.out.print("년도: ");
+                                year = addSongs.nextInt();
+                                songsArray[i].setYear(year);
+                                break;
+                            } catch (InputMismatchException ime) {
+                                System.out.println("잘못 입력하셨습니다, 다시 입력해주세요");
+                                addSongs = new Scanner(System.in);
+                            }
+                        } while(true);
 
+                        do {
+                            try {
+                                System.out.print("트랙번호: ");
+                                track = addSongs.nextInt();
+                                songsArray[i].setTrack(track);
+                                break;
+                            } catch (InputMismatchException ime) {
+                                System.out.println("잘못 입력하셨습니다, 다시 입력해주세요");
+                                addSongs = new Scanner(System.in);
+                            }
+                        } while(true);
+
+                        System.out.println("음악 추가가 완료되었습니다");
                         i++;
                         break;
                     case 2 :
