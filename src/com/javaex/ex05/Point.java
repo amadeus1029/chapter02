@@ -3,13 +3,13 @@ package com.javaex.ex05;
 public class Point {
     private int x,y;
     public void setX(int num) {
-        x = num;
+        this.x = num;
     }
     public int getX() {
         return x;
     }
     public void setY(int num) {
-        y = num;
+        this.y = num;
     }
     public int getY() {
         return y;
