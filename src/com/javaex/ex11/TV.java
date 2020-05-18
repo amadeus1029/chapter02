@@ -40,12 +40,11 @@ public class TV {
         }
     }
     public void volume(boolean volume) {
-        if(volume && this.volume<100) {
-            this.volume++;
+        if(volume) {
+            volume(this.volume+1);
             System.out.println("음량 증가");
-        }
-        if(!volume && this.volume>0) {
-            this.volume--;
+        } else {
+            volume(this.volume-1);
             System.out.println("음량 감소");
         }
     }
@@ -58,12 +57,11 @@ public class TV {
         }
     }
     public void channel(boolean channel) {
-        if(channel && this.channel<255) {
-            this.channel++;
+        if(channel) {
+            channel(this.channel+1);
             System.out.println("채널 위로 이동");
-        }
-        if(!channel && this.channel>1){
-            this.channel--;
+        } else {
+            channel(this.channel-1);
             System.out.println("채널 아래로 이동");
         }
     }
